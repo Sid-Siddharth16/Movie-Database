@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
+
 
 export default function Login() {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-
+  const navigate = useNavigate();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(email);
@@ -11,6 +13,9 @@ export default function Login() {
     setEmail("");
     setPassword("");
   };
+  const handleClick = () => {
+    navigate("/signup");
+  }
   return (
     <form onSubmit={handleSubmit}>
       <div className="max-w-2/3 md:max-w-1/3 mx-auto mt-10 flex flex-col justify-center items-center gap-4 p-9 py-10 border border-gray-200 rounded-md shadow-md">
@@ -39,7 +44,7 @@ export default function Login() {
 
         <span>
           Don't have account? 
-          <a className="mx-1 text-blue-700 underline" href="#">Register</a>
+          <a className="mx-1 text-blue-700 underline" onClick={handleClick}>Register</a>
         </span>
       </div>
     </form>

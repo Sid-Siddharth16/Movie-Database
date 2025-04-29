@@ -1,37 +1,46 @@
 import logo from "../assets/logo-img.jpg";
 
-import { Link, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 
 const Navbar: React.FC = () => {
   const navigate = useNavigate();
   const handleClick = () => {
     navigate("/login");
   };
+
   return (
     <div>
       <nav className="flex justify-between items-center bg-gray-800 text-white p-4">
         <div className="max-w-1/3 ml-10">
-          <img src={logo} alt="logo" className="max-w-20 bg-blend-multiply" />
+          <img src={logo} alt="logo" className="max" />
         </div>
-        <div className="max-w-1/3 ml-10">
+
+        <div>
           <ul className="flex justify-between gap-8">
-            <li>  
-              <Link to="#">Home</Link>
+            <li>
+              <a href="#">Home</a>
             </li>
             <li>
-              <Link to="#">Movies</Link>
+              <a href="#">Movies</a>
             </li>
             <li>
-              <Link to="#">Contact</Link>
+              <a href="#">Contact</a>
             </li>
             <li>
-              <Link to="#">About</Link>
+              <a href="#">About</a>
             </li>
           </ul>
         </div>
-        <div className="mr-10">
-          <button className="rounded-full border mr-2">User</button>
-          <button onClick={handleClick}>Login</button>
+        <div className="mr-10 flex items-center gap-2">
+          <button className="rounded-full border p-1 hover:bg-gray-700">
+            <BiUser size={20} />
+          </button>
+          <button
+            className="cursor-pointer hover:underline"
+            onClick={handleClick}
+          >
+            Login
+          </button>
         </div>
       </nav>
     </div>
