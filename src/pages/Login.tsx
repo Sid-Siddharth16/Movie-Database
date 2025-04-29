@@ -44,7 +44,7 @@ export default function Login() {
 
         <span>
           Don't have account? 
-          <a className="mx-1 text-blue-700 underline" onClick={handleClick}>Register</a>
+          <a className="mx-1 text-blue-700 underline cursor-pointer" onClick={handleClick}>Register</a>
         </span>
       </div>
     </form>

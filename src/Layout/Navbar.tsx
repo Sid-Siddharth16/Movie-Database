@@ -1,5 +1,5 @@
 import logo from "../assets/logo-img.jpg";
-
+import { BiUser } from "react-icons/bi";
 import { useNavigate } from "react-router";
 
 const Navbar: React.FC = () => {
