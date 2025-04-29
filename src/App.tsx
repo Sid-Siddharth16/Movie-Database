@@ -1,27 +1,19 @@
-import './styles/App.css'
-import Login from './pages/Login'
-import Navbar from './Layout/Navbar'
-import {Routes, Route } from 'react-router'
+import "./styles/App.css";
+import Login from "./pages/Login";
+import Navbar from "./Layout/Navbar";
+import { Routes, Route } from "react-router";
+import SignUp from "./pages/SignUp";
 
 function App() {
-
-
-  
-
   return (
     <div className="App">
       <Routes>
-        <Route path = '/navbar' element = {<Navbar/>}/>
-        <Route path='/login' element={<Login/>}/>
+        <Route path="/" element={<Navbar />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
-      <Navbar/>
     </div>
-  )
+  );
 }
 
-export default App
-
-
-
-
-
+export default App;
