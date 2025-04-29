@@ -1,5 +1,5 @@
 import logo from "../assets/logo-img.jpg";
-
+import { BiUser } from "react-icons/bi";
 import { useNavigate } from "react-router";
 
 const Navbar: React.FC = () => {
@@ -7,31 +7,44 @@ const Navbar: React.FC = () => {
   const handleClick = () => {
     navigate("/login");
   };
+
   return (
     <div>
       <nav className="flex justify-between items-center bg-gray-800 text-white p-4">
-        <div className="max-w-1/3 ml-10">
-          <img src={logo} alt="logo" className="max" />
+        <div className="ml-10">
+          <img
+            src={logo}
+            alt="logo"
+            className="h-12 w-auto object-contain"
+          />
         </div>
-        <div className="max-w-1/3 ml-10">
+
+        <div>
           <ul className="flex justify-between gap-8">
             <li>
-              <a href="#">Home</a>
+              <a href="#" className="hover:text-gray-300">Home</a>
             </li>
             <li>
-              <a href="#">Movies</a>
+              <a href="#" className="hover:text-gray-300">Movies</a>
             </li>
             <li>
-              <a href="#">Contact</a>
+              <a href="#" className="hover:text-gray-300">Contact</a>
             </li>
             <li>
-              <a href="#">About</a>
+              <a href="#" className="hover:text-gray-300">About</a>
             </li>
           </ul>
         </div>
-        <div className="mr-10">
-          <button className="rounded-full border mr-2">User</button>
-          <button onClick={handleClick}>Login</button>
+        <div className="mr-10 flex items-center gap-2">
+          <button className="rounded-full border p-1 hover:bg-gray-700">
+            <BiUser size={20} />
+          </button>
+          <button
+            className="cursor-pointer hover:underline"
+            onClick={handleClick}
+          >
+            Login
+          </button>
         </div>
       </nav>
     </div>
