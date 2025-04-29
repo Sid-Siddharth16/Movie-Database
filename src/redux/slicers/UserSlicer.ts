@@ -1,19 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface Users {
-    user_id: String,
-    user_name: String,
-    password: String,
-    email: String,
-    error: String,
+    users: [] || undefined,
+    
 };
 
 const initialState: Users = {
-    user_id: "",
-    user_name: "",
-    password: "", 
-    email: "",
-    error: ""
+    users: []
 }
 
 

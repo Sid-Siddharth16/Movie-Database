@@ -1,5 +1,5 @@
 import logo from "../assets/logo-img.jpg";
-import { BiUser } from "react-icons/bi";
+
 import { useNavigate } from "react-router";
 
 const Navbar: React.FC = () => {
@@ -15,23 +15,23 @@ const Navbar: React.FC = () => {
           <img
             src={logo}
             alt="logo"
-            className="h-12 w-auto object-contain pl-0"
+            className="h-12 w-auto object-contain"
           />
         </div>
 
         <div>
           <ul className="flex justify-between gap-8">
             <li>
-              <a href="#" className="hover:text-gray-300">Home</a>
+              <a href="#">Home</a>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-300">Movies</a>
+              <a href="#">Movies</a>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-300">Contact</a>
+              <a href="#">Contact</a>
             </li>
             <li>
-              <a href="#" className="hover:text-gray-300">About</a>
+              <a href="#">About</a>
             </li>
           </ul>
         </div>
