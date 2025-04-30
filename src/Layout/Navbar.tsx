@@ -11,11 +11,11 @@ const Navbar: React.FC = () => {
   return (
     <div>
       <nav className="flex justify-between items-center bg-gray-800 text-white p-4">
-        <div className="ml-10">
+        <div className="ml-10 rounded-lg" >
           <img
             src={logo}
             alt="logo"
-            className="h-12 w-auto object-contain"
+            className="h-12 w-auto object-contain rounded-full "
           />
         </div>
 
