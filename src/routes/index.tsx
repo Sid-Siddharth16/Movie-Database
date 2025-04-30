@@ -7,6 +7,7 @@ import Login from '../pages/Login';
 import SignUp from '../pages/SignUp';
 import UserDashboard from '../pages/UserDashboard';
 import NotFound from '../pages/NotFound';
+import ForgotPassword from '../pages/ForgotPassword';
 
 const AppRoutes = () => {
   const routes = useRoutes([
@@ -31,6 +32,14 @@ const AppRoutes = () => {
       element: (
         <NoLayout>
           <SignUp />
+        </NoLayout>
+      ),
+    },
+    {
+      path: '/forget_pass',
+      element: (
+        <NoLayout>
+          <ForgotPassword />
         </NoLayout>
       ),
     },

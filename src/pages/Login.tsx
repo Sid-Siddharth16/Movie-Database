@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 
 export default function Login() {
@@ -42,13 +42,13 @@ export default function Login() {
             setPassword(e.target.value)
           }
         />
-        <a href="#" className="mx-1 text-blue-700 underline cursor-pointer" onClick={handleForgotClick}>Forgot Password?</a>
+        <Link to="/forget_pass" className="mx-1 text-blue-700 underline cursor-pointer" onClick={handleForgotClick}>Forgot Password?</Link>
 
         <button className="text-white border-1 px-6 py-1 rounded-md bg-blue-400 hover:bg-blue-600"> Login</button>
 
         <span>
           Don't have account? 
-          <a className="mx-1 text-blue-700 underline cursor-pointer" onClick={handleClick}>Register</a>
+          <Link to="/signup" className="mx-1 text-blue-700 underline cursor-pointer" onClick={handleClick}>Register</Link>
         </span>
       </div>
     </form>
