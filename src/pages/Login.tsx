@@ -16,6 +16,9 @@ export default function Login() {
   const handleClick = () => {
     navigate("/signup");
   }
+  const handleForgotClick = () =>{
+    navigate('/forgotpassword')
+  }
   return (
     <form onSubmit={handleSubmit}>
       <div className="max-w-2/3 md:max-w-1/3 mx-auto mt-10 flex flex-col justify-center items-center gap-4 p-9 py-10 border border-gray-200 rounded-md shadow-md">
@@ -39,6 +42,7 @@ export default function Login() {
             setPassword(e.target.value)
           }
         />
+        <a href="#" className="mx-1 text-blue-700 underline cursor-pointer" onClick={handleForgotClick}>Forgot Password?</a>
 
         <button className="text-white border-1 px-6 py-1 rounded-md bg-blue-400 hover:bg-blue-600"> Login</button>
 

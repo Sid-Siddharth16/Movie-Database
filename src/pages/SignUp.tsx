@@ -16,6 +16,11 @@ const SignUp: React.FC = () => {
 
     console.log('Name:', name);
     console.log('Email:', email);
+    console.log('Password:', password);
+    setName('');
+    setEmail('');
+    setPassword('');
+    setConfirmPassword('');
   };
 
   return (

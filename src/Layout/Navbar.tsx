@@ -4,6 +4,7 @@ import { BiUser } from "react-icons/bi";
 import { useNavigate } from "react-router";
 
 const Navbar: React.FC = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const navigate = useNavigate();
 
@@ -16,49 +17,57 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <div>
+    <>
       <nav className="flex justify-between items-center bg-gray-800 text-white p-4">
         {/* Logo */}
-        <div className="ml-10 rounded-lg">
-          <img
-            src={logo}
-            alt="logo"
-            className="h-12 w-auto object-contain rounded-full"
-          />
+        <div className="flex justify-center items-center  ml-8">
+          <div className="mx-4 rounded-lg">
+            <img
+              src={logo}
+              alt="logo"
+              className=" w-10 object-contain rounded-full"
+            />
+          </div>
+
+          {/* Title */}
+          <div>
+            <span className="cursor-pointer font-bold font-serif text-xl "> 
+              MDb - Movie Database
+            </span>
+          </div>
         </div>
 
-        {/* Title */}
-        <div>
-          <span className="cursor-pointer font-extrabold text-3xl">
-            MDb - Movie Database
-          </span>
-        </div>
+        <div className="flex justify-center items-center gap-10 mr-10">
+          {/* Search Input */}
+          <div>
+            <input
+              type="text"
+              placeholder="Search here..."
+              value={searchQuery}
+              onChange={handleSearchChange}
+              className=" px-2 py-1 rounded-md text-white min-w-80 border-0"
+            />
+          </div>
 
-        {/* Search Input */}
-        <div>
-          <input
-            type="text"
-            placeholder="Search here..."
-            value={searchQuery}
-            onChange={handleSearchChange}
-            className="px-2 py-1 rounded-md text-black"
-          />
-        </div>
-
-        {/* User/Login Buttons */}
-        <div className="mr-10 flex items-center gap-2">
-          <button className="rounded-full border p-1 hover:bg-gray-700">
-            <BiUser size={20} />
-          </button>
-          <button
-            className="cursor-pointer hover:underline"
-            onClick={handleClick}
-          >
-            Login
-          </button>
+          {/* User/Login Buttons */}
+          <div className="mr-10 flex items-center gap-2">
+            
+            { isAuthenticated ? 
+            (<div className="flex justify-center items-center gap-2"> 
+              <button className="rounded-full border p-1 hover:bg-gray-700">
+                <BiUser size={20} />
+              </button>
+              <div>User_name</div>
+            </div>
+              ) :(
+              <button className="border border-gray-400 px-6 py-1 rounded-lg hover:bg-gray-400 hover:border-gray-700" onClick={handleClick} >
+              Login
+            </button>)
+            }
+          </div>
         </div>
       </nav>
-    </div>
+    </>
   );
 };
 
